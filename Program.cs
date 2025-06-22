@@ -4,98 +4,103 @@ class OddsAndEvensGame
 {
     static void Main()
     {
-        Console.WriteLine("Welcome to the Odds and Evens Game!");
+        Console.WriteLine("Welcome to the Odds and Evens Game!\n");
 
-        string mode = GetGameMode();
+        int mode = GetGameMode();
         bool userChoseOdd = GetOddOrEvenChoice();
-        int player1Number = GetPlayerNumber("Player 1");
 
-        int player2Number = (mode == "1") ? GetComputerNumber() : GetSecondPlayerNumber();
+        string player1 = "Player 1";
+        string player2 = mode == 1 ? "Computer" : "Player 2";
 
-        ShowChoicesAndSum(mode, player1Number, player2Number);
+        int player1Num = GetPlayerNumber(player1);
 
-        DetermineWinner(mode, userChoseOdd, player1Number + player2Number);
+        int player2Num = mode == 1 ? GetComputerNumber() : GetSecondPlayerNumber();
 
-        Console.WriteLine("Thanks for playing!");
+        ShowChoicesAndSum(mode, player1Num, player2Num);
+
+        int sum = player1Num + player2Num;
+        DetermineWinner(mode, userChoseOdd, sum);
     }
 
-    static string GetGameMode()
+    static int GetGameMode()
     {
-        Console.WriteLine("Choose game mode:");
-        Console.WriteLine("1 - Play against computer");
-        Console.WriteLine("2 - Play against another user");
-        Console.Write("Enter 1 or 2: ");
-        string mode = Console.ReadLine().Trim();
-
-        while (mode != "1" && mode != "2")
+        while (true)
         {
-            Console.Write("Invalid input. Please enter 1 or 2: ");
-            mode = Console.ReadLine().Trim();
-        }
+            Console.WriteLine("Choose game mode:");
+            Console.WriteLine("1 - Play against Computer");
+            Console.WriteLine("2 - Play against another Player");
+            Console.Write("Enter 1 or 2: ");
+            string input = Console.ReadLine();
 
-        return mode;
+            if (input == "1" || input == "2")
+                return int.Parse(input);
+
+            Console.WriteLine("Invalid input. Please enter 1 or 2.\n");
+        }
     }
 
     static bool GetOddOrEvenChoice()
     {
-        Console.Write("Player 1 - Choose Odd or Even (O/E): ");
-        string choice = Console.ReadLine().Trim().ToUpper();
-
-        while (choice != "O" && choice != "E")
+        while (true)
         {
-            Console.Write("Invalid input. Please enter 'O' for Odd or 'E' for Even: ");
-            choice = Console.ReadLine().Trim().ToUpper();
-        }
+            Console.Write("Player 1, do you choose Odd or Even? (O/E): ");
+            string choice = Console.ReadLine().Trim().ToUpper();
 
-        return (choice == "O");
+            if (choice == "O")
+                return true;
+            if (choice == "E")
+                return false;
+
+            Console.WriteLine("Invalid input. Please enter O for Odd or E for Even.\n");
+        }
     }
 
     static int GetPlayerNumber(string playerName)
     {
-        Console.Write($"{playerName} - Pick a number between 1 and 5: ");
-        int number;
-        while (!int.TryParse(Console.ReadLine(), out number) || number < 1 || number > 5)
+        while (true)
         {
-            Console.Write("Invalid number. Pick a number between 1 and 5: ");
+            Console.Write($"{playerName}, enter a number between 1 and 5: ");
+            if (int.TryParse(Console.ReadLine(), out int num) && num >= 1 && num <= 5)
+                return num;
+
+            Console.WriteLine("Invalid number. Please try again.\n");
         }
-
-        return number;
-    }
-
-    static int GetComputerNumber()
-    {
-        Random rand = new Random();
-        int number = rand.Next(1, 6);
-        Console.WriteLine($"Computer picked: {number}");
-        return number;
     }
 
     static int GetSecondPlayerNumber()
     {
         Console.Clear();
-        Console.WriteLine("Player 2 - It’s your turn now.");
         return GetPlayerNumber("Player 2");
     }
 
-    static void ShowChoicesAndSum(string mode, int player1, int player2)
+    static int GetComputerNumber()
     {
-        Console.WriteLine($"Player 1 chose: {player1}");
-        Console.WriteLine(mode == "1" ? $"Computer chose: {player2}" : $"Player 2 chose: {player2}");
-        Console.WriteLine($"Sum of numbers: {player1 + player2}");
+        Random rnd = new Random();
+        int number = rnd.Next(1, 6);
+        Console.WriteLine("Computer has chosen its number.");
+        return number;
     }
 
-    static void DetermineWinner(string mode, bool userChoseOdd, int sum)
+    static void ShowChoicesAndSum(int mode, int player1, int player2)
     {
-        bool sumIsOdd = (sum % 2 != 0);
-        bool userWins = (userChoseOdd && sumIsOdd) || (!userChoseOdd && !sumIsOdd);
+        Console.WriteLine("\nRevealing numbers...");
+        Console.WriteLine($"Player 1 chose: {player1}");
+        Console.WriteLine((mode == 1 ? "Computer" : "Player 2") + $" chose: {player2}");
 
-        if (userWins)
-        {
-            Console.WriteLine("Player 1 wins!");
-        }
+        int sum = player1 + player2;
+        Console.WriteLine($"Sum of numbers: {sum} ({(sum % 2 == 0 ? "Even" : "Odd")})\n");
+    }
+
+    static void DetermineWinner(int mode, bool userChoseOdd, int sum)
+    {
+        bool sumIsOdd = sum % 2 != 0;
+        string winner;
+
+        if (sumIsOdd == userChoseOdd)
+            winner = "Player 1 wins!";
         else
-        {
-            Console.WriteLine(mode == "1" ? "Computer wins!" : "Player 2 wins!");
-        }
+            winner = mode == 1 ? "Computer wins!" : "Player 2 wins!";
+
+        Console.WriteLine(winner);
     }
 }

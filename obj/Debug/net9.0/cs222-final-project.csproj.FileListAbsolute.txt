@@ -12,3 +12,4 @@
 /Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.pdb
 /Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.genruntimeconfig.cache
 /Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/ref/cs222-final-project.dll
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.sourcelink.json

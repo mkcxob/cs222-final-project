@@ -39,3 +39,65 @@ ShowChoicesAndSum(mode, player1, player2)
 
 DetermineWinner(mode, userChoseOdd, sum)
     - Decides and shows who won based on the sum and Player 1's choice.
+
+Samble Data 1: Player vs. Computer:
+
+Welcome to the Odds and Evens Game!
+
+Choose game mode:
+1 - Play against Computer
+2 - Play against another Player
+Enter 1 or 2: 1
+
+Player 1, do you choose Odd or Even? (O/E): O
+Player 1, enter a number between 1 and 5: 3
+Computer has chosen its number.
+
+Revealing numbers...
+Player 1 chose: 3
+Computer chose: 4
+Sum of numbers: 7 (Odd)
+
+Player 1 wins!
+
+Sample Data 2: Player vs. Player
+
+Welcome to the Odds and Evens Game!
+
+Choose game mode:
+1 - Play against Computer
+2 - Play against another Player
+Enter 1 or 2: 2
+
+Player 1, do you choose Odd or Even? (O/E): E
+Player 1, enter a number between 1 and 5: 2
+
+**Screen Clears**
+
+Player 2, enter a number between 1 and 5: 5
+
+Revealing numbers...
+Player 1 chose: 2
+Player 2 chose: 5
+Sum of numbers: 7 (Odd)
+
+Player 2 wins!
+
+
+
+If a player selects another option outside of O or E, the following message is displayed:
+
+Player 1, do you choose Odd or Even? (O/E): t
+Invalid input. Please enter O for Odd or E for Even.
+
+Player 1, do you choose Odd or Even? (O/E): e
+
+
+
+If a number outside of 1 to 5 is chosen, the following message will be shown
+and the user will be prompted to input another number:
+
+Player 1, enter a number between 1 and 5: 6
+Invalid number. Please try again.
+
+Player 1, enter a number between 1 and 5: 
