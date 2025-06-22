@@ -1,0 +1,14 @@
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/bin/Debug/net9.0/cs222-final-project
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/bin/Debug/net9.0/cs222-final-project.deps.json
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/bin/Debug/net9.0/cs222-final-project.runtimeconfig.json
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/bin/Debug/net9.0/cs222-final-project.dll
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/bin/Debug/net9.0/cs222-final-project.pdb
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.AssemblyInfoInputs.cache
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.AssemblyInfo.cs
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.csproj.CoreCompileInputs.cache
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.dll
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/refint/cs222-final-project.dll
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.pdb
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/cs222-final-project.genruntimeconfig.cache
+/Users/michaelobrien/Studio/carolina-university/cs222-final-project/obj/Debug/net9.0/ref/cs222-final-project.dll

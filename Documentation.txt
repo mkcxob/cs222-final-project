@@ -1,0 +1,41 @@
+
+Odds and Evens Game
+-------------------
+This is a simple C# console game where a player can play "Odds and Evens" against the computer or another player.
+
+Game Rules:
+    - Player 1 chooses "Odd" or "Even".
+    - Both players (or player + computer) choose a number between 1 and 5.
+    - The sum of the numbers is calculated.
+    - If the sum is odd/even and matches Player 1's choice, Player 1 wins. Otherwise, the opponent wins.
+
+Features:
+    - Game mode selection: vs Computer or vs another User.
+    - Input validation for mode, odd/even, and numbers.
+    - Hides Player 1's number before Player 2 inputs theirs (in 2-player mode).
+
+Methods Overview:
+-----------------
+Main()
+    - The main flow of the game.
+
+GetGameMode()
+    - Asks the player to choose game mode (1 = computer, 2 = user).
+
+GetOddOrEvenChoice()
+    - Asks Player 1 to pick Odd or Even.
+
+GetPlayerNumber(playerName)
+    - Asks the given player to enter a number between 1 and 5.
+
+GetComputerNumber()
+    - Randomly picks a number for the computer (1–5).
+
+GetSecondPlayerNumber()
+    - Clears the screen and asks Player 2 for their number.
+
+ShowChoicesAndSum(mode, player1, player2)
+    - Shows each player's number and the total sum.
+
+DetermineWinner(mode, userChoseOdd, sum)
+    - Decides and shows who won based on the sum and Player 1's choice.
